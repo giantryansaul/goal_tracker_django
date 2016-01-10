@@ -1,0 +1,5 @@
+[run]
+include = goal_tracker_django/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
