@@ -1,6 +1,7 @@
 from django.db import models
 
 from ..core.models import TimeStampedUserModel
+from ..goals.models import Goal
 
 
 class EventManager(models.Manager):
@@ -14,7 +15,7 @@ class EventManager(models.Manager):
 class Event(TimeStampedUserModel):
     """
     Model for Events. Inherits user and create/modified dates from
-        TimeStampedModel.
+    TimeStampedModel.
 
     note (CharField): optional description of event
     logged_date (DateTimeField): editable date of field,
@@ -24,4 +25,4 @@ class Event(TimeStampedUserModel):
     """
     note = models.CharField(max_length=255)
     logged_date = models.DateTimeField(auto_now=True)
-    associated_goal = models.ForeignKey
+    associated_goal = models.ForeignKey(Goal)

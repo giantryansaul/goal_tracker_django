@@ -21,15 +21,13 @@ class EventUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
 
     model = Event
 
-    # permission_required = 'events.change_event'
-    # raise_exception = True
-    # TODO: Add permissions.
+    permission_required = 'events.change_event'
+    raise_exception = True
 
 
 class EventCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
 
     model = Event
 
-    # permission_required = 'events.add_event'
-    # raise_exception = True
-    # TODO: Add permissions.
+    permission_required = 'events.add_event'
+    raise_exception = True
